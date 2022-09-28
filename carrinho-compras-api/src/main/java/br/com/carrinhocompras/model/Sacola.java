@@ -1,6 +1,7 @@
 package br.com.carrinhocompras.model;
 
 import br.com.carrinhocompras.enumerator.FormaPagamento;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.List;

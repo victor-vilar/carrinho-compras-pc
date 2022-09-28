@@ -1,6 +1,7 @@
 package br.com.carrinhocompras.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="restaurante")
@@ -12,7 +13,7 @@ public class Restaurante {
 
     private String nome;
 
-    @OneToMany(cascade= CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Produto> cardapio;
 
     @Embedded
