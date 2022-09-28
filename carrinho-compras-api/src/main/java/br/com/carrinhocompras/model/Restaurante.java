@@ -37,6 +37,10 @@ public class Restaurante {
         this.endereco = endereco;
     }
 
+
+    public Restaurante(){
+
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -28,6 +28,9 @@ public class Sacola {
 
     private boolean fechada;
 
+    public Sacola(){
+
+    }
 
     public Cliente getCliente() {
         return cliente;

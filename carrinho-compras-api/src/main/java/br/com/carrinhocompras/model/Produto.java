@@ -24,6 +24,10 @@ public class Produto {
     @JsonIgnore
     private Restaurante restaurante;
 
+    public Produto(){
+
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

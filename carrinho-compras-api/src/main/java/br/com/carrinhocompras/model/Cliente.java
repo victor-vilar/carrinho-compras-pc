@@ -33,6 +33,12 @@ public class Cliente {
         this.endereco = endereco;
     }
 
+
+    public Cliente (){
+
+    }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

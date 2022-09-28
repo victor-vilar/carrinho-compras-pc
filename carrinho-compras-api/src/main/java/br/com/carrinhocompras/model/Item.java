@@ -47,6 +47,10 @@ public class Item {
         this.sacola = sacola;
     }
 
+
+    public Item(){
+
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
