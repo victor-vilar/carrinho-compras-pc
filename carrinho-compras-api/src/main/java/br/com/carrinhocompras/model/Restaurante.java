@@ -11,33 +11,23 @@ public class Restaurante {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-
     private String nome;
-
     @OneToMany(cascade = CascadeType.ALL)
     private List<Produto> cardapio;
-
     @Embedded
     private Endereco endereco;
-
-
     public String getNome() {
         return nome;
     }
-
     public void setNome(String nome) {
         this.nome = nome;
     }
-
     public Endereco getEndereco() {
         return endereco;
     }
-
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
-
-
     public Restaurante(){
 
     }
@@ -48,7 +38,6 @@ public class Restaurante {
         Restaurante that = (Restaurante) o;
         return Objects.equals(id, that.id) && Objects.equals(nome, that.nome) && Objects.equals(cardapio, that.cardapio) && Objects.equals(endereco, that.endereco);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(id, nome, cardapio, endereco);
