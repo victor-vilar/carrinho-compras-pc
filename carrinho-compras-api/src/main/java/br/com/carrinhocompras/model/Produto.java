@@ -1,6 +1,7 @@
 package br.com.carrinhocompras.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -8,6 +9,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name="produto")
+@JsonIgnoreProperties({"hibernateLazyInitialization","handler"})
 public class Produto {
 
     @Id
@@ -15,7 +17,7 @@ public class Produto {
     private Long id;
     private String nome;
     private double valorUnitario;
-    @Builder.Default
+    //@Builder.Default
     private Boolean disponivel = true;
     @ManyToOne
     @JsonIgnore

@@ -1,10 +1,13 @@
 package br.com.carrinhocompras.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Table(name="cliente")
+@JsonIgnoreProperties({"hibernateLazyInitialization","handler"})
 public class Cliente {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)

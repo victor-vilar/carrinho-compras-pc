@@ -3,21 +3,31 @@ package br.com.carrinhocompras.model;
 import javax.persistence.*;
 import java.util.Objects;
 
-@Entity
-@Table(name="endereco")
+
+@Embeddable
 public class Endereco {
 
     private String cep;
     private String complemento;
+
+    public String getCep() {
+        return cep;
+    }
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
     public String getComplemento() {
         return complemento;
     }
     public void setComplemento(String complemento) {
         this.complemento = complemento;
     }
+
     public Endereco(){
 
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
