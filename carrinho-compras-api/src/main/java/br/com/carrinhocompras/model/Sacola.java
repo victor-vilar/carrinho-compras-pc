@@ -49,4 +49,8 @@ public class Sacola {
     public void setFechada(boolean fechada) {
         this.fechada = fechada;
     }
+
+    public List<Item> getItens() {
+        return this.itens;
+    }
 }
