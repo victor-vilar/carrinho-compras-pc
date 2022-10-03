@@ -13,9 +13,9 @@ public class SacolaResource {
 
     private final SacolaService service;
 
-    public SacolaResource(){
+    public SacolaResource(SacolaService service){
 
-        this.service = new SacolaService();
+        this.service = service;
 
     }
 
