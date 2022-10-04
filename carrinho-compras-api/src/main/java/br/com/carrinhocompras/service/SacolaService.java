@@ -66,18 +66,17 @@ public class SacolaService {
 
         if(sacola.getItens().isEmpty()){
             sacola.getItens().add(item);
-        }else{
+        }else {
             Restaurante restaurante = sacola.getItens().get(0).getProduto().getRestaurante();
-            if(item.getProduto().getRestaurante().equals(restaurante)){
-                sacola.getItens().add(item);
-            }else{
+            if (item.getProduto().getRestaurante().equals(restaurante)) {
+                sacola.adicionarItem(item);
+            } else {
                 throw new RuntimeException("Não é possível adicionar produtos de restaurante diferentes." +
                         "Feche a sacola ou esvazie !");
             }
         }
 
         repository.save(sacola);
-        itemRepositorio.save(item);
         return item;
 
     }

@@ -33,7 +33,7 @@ public class SacolaResource {
 
     }
 
-    @PatchMapping("/fecharSacola/{id}")
+    @PatchMapping("/fecharsacola/{id}")
     public Sacola fecharSacola(@PathVariable("id") Long id,@RequestParam("formaPagamento") int formaPagamento){
 
         return service.fecharSacola(id,formaPagamento);

@@ -4,6 +4,7 @@ import br.com.carrinhocompras.enumerator.FormaPagamento;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import javax.persistence.criteria.Fetch;
 import java.util.List;
 
 @Entity
@@ -18,13 +19,14 @@ public class Sacola {
     private Cliente cliente;
     @OneToMany(cascade= CascadeType.ALL)
     private List<Item> itens;
-    private Double valorTotal;
+    private Double valorTotal = 0.0;
     @Enumerated
     private FormaPagamento formaPagamento;
     private boolean fechada;
     public Sacola(){
 
     }
+
     public Cliente getCliente() {
         return cliente;
     }
@@ -40,6 +42,7 @@ public class Sacola {
     public FormaPagamento getFormaPagamento() {
         return formaPagamento;
     }
+
     public void setFormaPagamento(FormaPagamento formaPagamento) {
         this.formaPagamento = formaPagamento;
     }
@@ -52,5 +55,10 @@ public class Sacola {
 
     public List<Item> getItens() {
         return this.itens;
+    }
+
+    public void adicionarItem(Item item){
+        this.valorTotal+= item.getQuantidade() * item.getProduto().getValorUnitario();
+        this.itens.add(item);
     }
 }
