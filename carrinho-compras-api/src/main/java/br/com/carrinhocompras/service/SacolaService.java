@@ -65,7 +65,7 @@ public class SacolaService {
         item.setSacola(verSacola(itemDto.getIdSacola()));
 
         if(sacola.getItens().isEmpty()){
-            sacola.getItens().add(item);
+            sacola.adicionarItem(item);
         }else {
             Restaurante restaurante = sacola.getItens().get(0).getProduto().getRestaurante();
             if (item.getProduto().getRestaurante().equals(restaurante)) {
